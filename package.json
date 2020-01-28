@@ -1,0 +1,19 @@
+{
+  "name": "vue-cms-data",
+  "version": "1.0.0",
+  "description": "Applies lazy loading and routing to static cms/html data\\",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raideer/vue-cms-data.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raideer/vue-cms-data/issues"
+  },
+  "homepage": "https://github.com/raideer/vue-cms-data#readme"
+}
