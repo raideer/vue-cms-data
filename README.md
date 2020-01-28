@@ -8,38 +8,44 @@ Adds a directive for localizing links and lazyloading images for raw html data. 
 
 ## Usage
 Instead of using `v-html` directive, just use `v-cms-data`
-    <template>
-      <div class="container">
-        <div v-cms-data="staticHtmlContent" />
-      </div>
-    </template>
-    
-    <script>
-    import CmsData from 'src/modules/vue-cms-data/directives/CmsData'
-    
-    export default {
-      directives: {
-        CmsData
-      },
-      computed: {
-        staticHtmlContent () {
-          // Returns static html
-        }
+```vue
+<template>
+    <div class="container">
+      <div v-cms-data="staticHtmlContent" />
+    </div>
+  </template>
+  
+  <script>
+  import CmsData from 'src/modules/vue-cms-data/directives/CmsData'
+  
+  export default {
+    directives: {
+      CmsData
+    },
+    computed: {
+      staticHtmlContent () {
+        // Returns static html
       }
     }
-    </script>
+  }
+  </script>
+```
 
 By default the static data won't be localized or lazy loaded. To do that, you have pass modifiers to the
 directive:
 
-    <div v-cms-data.localized="staticHtmlContent" />
-    <div v-cms-data.lazy="staticHtmlContent" />
-    <div v-cms-data.localized.lazy="staticHtmlContent" />
+```vue
+<div v-cms-data.localized="staticHtmlContent" />
+<div v-cms-data.lazy="staticHtmlContent" />
+<div v-cms-data.localized.lazy="staticHtmlContent" />
+```
     
 Instead of passing modifiers, you can also pass an object to the directive and specify them there:
 
-    <div v-cms-data.localized="{
-      content: staticHtmlContent,
-      localized: true,
-      lazy: true
-    }" />
+```vue
+<div v-cms-data.localized="{
+  content: staticHtmlContent,
+  localized: true,
+  lazy: true
+}" />
+```
