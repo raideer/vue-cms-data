@@ -3,8 +3,7 @@ Adds a directive for localizing links and lazyloading images for raw html data. 
 
 
 ## Installation
-* Download this repo and place it in `src/modules/vue-cms-data`
-* Or install it directly with yarn
+* Add this package to your project with `yarn add vue-cms-data` or `npm i vue-cms-data`
 
 ## Usage
 Instead of using `v-html` directive, just use `v-cms-data`
@@ -14,10 +13,10 @@ Instead of using `v-html` directive, just use `v-cms-data`
       <div v-cms-data="staticHtmlContent" />
     </div>
   </template>
-  
+
   <script>
-  import CmsData from 'src/modules/vue-cms-data/directives/CmsData'
-  
+  import CmsData from 'vue-cms-data'
+
   export default {
     directives: {
       CmsData
@@ -39,7 +38,7 @@ directive:
 <div v-cms-data.lazy="staticHtmlContent" />
 <div v-cms-data.localized.lazy="staticHtmlContent" />
 ```
-    
+
 Instead of passing modifiers, you can also pass an object to the directive and specify them there:
 
 ```vue
@@ -48,4 +47,31 @@ Instead of passing modifiers, you can also pass an object to the directive and s
   localized: true,
   lazy: true
 }" />
+```
+
+If you have a case where you can't use a directive, you can apply these transformations dirrectly to an html string and receive
+an array of HTML Elements:
+
+```vue
+<script>
+import { applyTransformations } from 'vue-cms-data/src/cms-data'
+
+export default {
+  computed: {
+    transformHtml () {
+      /**
+       * content: string
+       * $vm: Vue,
+       * settings?: Object
+       **/
+      return applyTransformations(this.html, this, {
+        localize: true,
+        lazy: true
+      }).forEach(child => {
+        document.body.appendChild(child)
+      })
+    }
+  }
+}
+</script>
 ```
