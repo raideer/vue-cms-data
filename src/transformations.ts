@@ -28,7 +28,7 @@ export function lazyloadImages(el: HTMLElement, vnode: any): void {
       child,
       {
         value: child.getAttribute('src'),
-        modifiers: {}
+        modifiers: {},
       },
       vnode,
     );
