@@ -1,6 +1,6 @@
 {
   "name": "vue-cms-data",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Applies lazy loading and routing to static cms/html data\\",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,16 +8,20 @@
     "type": "git",
     "url": "git+https://github.com/raideer/vue-cms-data.git"
   },
-  "keywords": ["vsf", "vue-storefront", "cms"],
+  "keywords": [
+    "vsf",
+    "vue-storefront",
+    "cms"
+  ],
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "author": "Kristofers <Raideer> Ozolins",
   "license": "MIT",
@@ -31,5 +35,7 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.5"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }
