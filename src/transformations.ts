@@ -24,13 +24,14 @@ export function localizeLinks(el: HTMLElement, $vm: any): void {
 
 export function lazyloadImages(el: HTMLElement, vnode: any): void {
   el.querySelectorAll('img').forEach(child => {
-    child.removeAttribute('src');
     vnode.context.$Lazyload.add(
       child,
       {
         value: child.getAttribute('src'),
+        modifiers: {}
       },
       vnode,
     );
+    child.removeAttribute('src');
   });
 }
