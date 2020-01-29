@@ -1,3 +1,3 @@
-import CmsData from './directives/CmsData'
+import CmsData from './directives/CmsData';
 
-export default CmsData
+export default CmsData;
