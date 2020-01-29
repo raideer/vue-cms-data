@@ -54,7 +54,7 @@ an array of HTML Elements:
 
 ```vue
 <script>
-import { applyTransformations } from 'vue-cms-data/src/cms-data'
+import { applyTransformations } from 'vue-cms-data/lib/cms-data'
 
 export default {
   computed: {
