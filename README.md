@@ -57,14 +57,14 @@ an array of HTML Elements:
 import { applyTransformations } from 'vue-cms-data/lib/cms-data'
 
 export default {
-  computed: {
+  methods: {
     transformHtml () {
       /**
        * content: string
        * $vm: Vue,
        * settings?: Object
        **/
-      return applyTransformations(this.html, this, {
+      applyTransformations(this.html, this, {
         localize: true,
         lazy: true
       }).forEach(child => {
