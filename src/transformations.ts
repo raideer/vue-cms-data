@@ -26,9 +26,9 @@ export function lazyloadImages(el: HTMLElement, vnode: any): void {
   el.querySelectorAll('img').forEach(child => {
     let value: string | null;
     if (child.getAttribute('data-src')) {
-      value = child.getAttribute('data-src')
+      value = child.getAttribute('data-src');
     } else {
-      value = child.getAttribute('src')
+      value = child.getAttribute('src');
     }
     vnode.context.$Lazyload.add(
       child,
