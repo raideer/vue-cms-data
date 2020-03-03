@@ -13,8 +13,8 @@ export function localizeLinks(el: HTMLElement, $vm: any): void {
       // don't handle same page links/anchors
       const url = new URL((target as any).href);
       const to = url.pathname;
-
-      if (window.location.pathname !== to && $event.preventDefault) {
+      const baseUrl = (window.location.host as any).protocol + '//' + (window.location.host as any).host
+      if (window.location.pathname !== to && target.href.startsWith(baseUrl) && $event.preventDefault) {
         $event.preventDefault();
         $vm.$router.push(to);
       }
