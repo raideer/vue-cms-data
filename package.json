@@ -1,6 +1,6 @@
 {
   "name": "vue-cms-data",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Applies lazy loading and routing to static cms/html data\\",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
