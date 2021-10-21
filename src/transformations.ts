@@ -1,8 +1,8 @@
 export function localizeLinks(el: HTMLElement, $vm: any): void {
   el.querySelectorAll('a').forEach(child => {
     child.addEventListener('click', $event => {
-      let target: any = $event.target;
-      while (target && target.tagName !== 'A') target = target.parentNode;
+      let target = $event.target as HTMLAnchorElement;
+      while (target && target.tagName !== 'A') target = target.parentNode as HTMLAnchorElement;
       const { altKey, ctrlKey, metaKey, shiftKey, button, defaultPrevented } = $event;
       // don't handle with control keys
       if (metaKey || altKey || ctrlKey || shiftKey) return;
@@ -13,6 +13,8 @@ export function localizeLinks(el: HTMLElement, $vm: any): void {
       // don't handle same page links/anchors
       const url = new URL((target as any).href);
       const to = url.pathname;
+      // don't handle target attribute
+      if (target.getAttribute('target')) return;
       if (window.location.pathname !== to && target.href.includes(window.location.host) && $event.preventDefault) {
         $event.preventDefault();
         $vm.$router.push(to);
